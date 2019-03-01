@@ -1,18 +1,41 @@
 import React from 'react';
-import { ExpoConfigView } from '@expo/samples';
+import { ScrollView, StyleSheet, Text, View} from 'react-native';
 
-export default class SettingsScreen extends React.Component {
+export default class LinksScreen extends React.Component {
   static navigationOptions = {
-    title: 'app.json',
+    title: 'Information',
   };
 
   render() {
-    /* Go ahead and delete ExpoConfigView and replace it with your
-     * content, we just wanted to give you a quick view of your config */
     return (
-    	<View>
-    		<Text> Information </Text>
+      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+        <View style={styles.topBox}>
+        	<Text style={{textAlign: "center"}}>
+        		We are a group of ordinary people who aim to make San Francisco a place of 
+        		<Text style={{fontWeight: 'bold'}}> home </Text>
+				and belonging to summer interns.        
+    		</Text>
+    		<Text style={{textAlign: "center"}}>
+    			{"\n"} We invite you to join our authentic community during your time here. Who you meet will surprise you!
+			</Text>
+			<Text style={{textAlign: "center", fontSize: 24,fontWeight: 'bold' }}>
+			{"\n"} {"\n"} It's not summer yet...
+			</Text>
+			<Text style={styles.getStartedText} style={{textAlign: "center"}}>
+			We’re currently getting our team ready for the summer. Sign up to receive an update when events are ready. Expect an email from us in May!
+			</Text>
+
+
 		</View>
-		);
+      </ScrollView>
+    );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: 15,
+    backgroundColor: '#fff',
+  },
+});

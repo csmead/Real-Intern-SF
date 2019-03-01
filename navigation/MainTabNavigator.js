@@ -3,33 +3,33 @@ import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
+import EventsScreen from '../screens/EventsScreen';
+import InfoScreen from '../screens/InfoScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
-const HomeStack = createStackNavigator({
-  Home: HomeScreen,
+const EventsStack = createStackNavigator({
+  Events: EventsScreen,
 });
 
-HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+EventsStack.navigationOptions = {
+  tabBarLabel: 'Events',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
       name={
         Platform.OS === 'ios'
-          ? 'ios-link' : 'md-link'
+          ? 'ios-home' : 'md-home'
           
       }
     />
   ),
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+const InfoStack = createStackNavigator({
+  Info: InfoScreen,
 });
 
-LinksStack.navigationOptions = {
+InfoStack.navigationOptions = {
   tabBarLabel: 'Info',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
@@ -55,7 +55,7 @@ SettingsStack.navigationOptions = {
 };
 
 export default createBottomTabNavigator({
-  HomeStack,
-  LinksStack,
+  EventsStack,
+  InfoStack,
   SettingsStack,
 });
